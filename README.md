@@ -1,5 +1,6 @@
 # react-midterm
-  
+
+URL: https://leafy-rolypoly-1842ea.netlify.app/  
   
 Styling:
   
@@ -13,8 +14,8 @@ Hooks
   
 References:
   
-TheCocktailDB
+TheCocktailDB  
 https://www.thecocktaildb.com/
   
-Codepen: Simple Button using Tailwind CSS
+Codepen: Simple Button using Tailwind CSS  
 https://codepen.io/FJKhan/pen/eYpvPGr
