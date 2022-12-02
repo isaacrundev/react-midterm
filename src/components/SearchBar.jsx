@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import fetchIngredientData from "../api/api";
+import fetchData from "../api/api";
 
-export default function SearchBar() {
+export default function SearchBar(props) {
   const [searchInput, setSearchInput] = useState("");
 
   const inputHandler = (e) => {
@@ -9,21 +9,30 @@ export default function SearchBar() {
     setSearchInput(e.target.value);
   };
 
-  const submitHandler = (e) => {
+  const submitHandler = async (e) => {
     e.preventDefault();
-    if (fetchIngredientData(searchInput) === undefined) {
-      console.log("No results");
-    } else {
-      console.log(fetchIngredientData(searchInput));
-    }
+    const result = await fetchData(searchInput);
+    result ? props.setData(result) : null;
   };
 
   return (
-    <React.Fragment>
-      <form onSubmit={submitHandler}>
-        <input onChange={inputHandler} type="text" />
-        <button type="submit">Search</button>
+    <>
+      <form onSubmit={submitHandler} className="flex justify-center p-5">
+        <div class="flex rounded-md overflow-hidden w-60 h-10">
+          <input
+            onChange={inputHandler}
+            type="text"
+            placeholder="Type here"
+            className="w-full rounded-md rounded-r-none"
+          />
+          <button
+            class="bg-indigo-600 text-white text-sm font-semibold rounded-r-md p-3"
+            type="submit"
+          >
+            Search
+          </button>
+        </div>
       </form>
-    </React.Fragment>
+    </>
   );
 }

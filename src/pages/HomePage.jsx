@@ -16,7 +16,8 @@ export default function HomePage() {
           <h1 className="text-center text-4xl text-white py-3">
             Cocktail Wiki
           </h1>
-        </div>
+        </div>{" "}
+        <SearchBar setData={setData} />
         <div className="nav-buttons flex justify-center	gap-5	py-4">
           {ingredientList.map((name) => {
             return (
@@ -30,7 +31,7 @@ export default function HomePage() {
         </div>
       </div>
       <hr />
-      <ItemList list={data} />
+      {data ? null : <ItemList list={data} />}
     </div>
   );
 }
