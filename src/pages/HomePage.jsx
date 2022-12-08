@@ -4,9 +4,14 @@ import ItemList from "../components/ItemList";
 import SearchBar from "../components/SearchBar";
 
 import { v4 } from "uuid";
+import { useEffect } from "react";
 
 export default function HomePage() {
   const [data, setData] = useState([]);
+
+  useEffect(() => {
+    console.log("data ", data);
+  }, [data]);
 
   const ingredientList = ["vodka", "gin", "rum", "tequila"];
   return (
@@ -31,7 +36,7 @@ export default function HomePage() {
         </div>
       </div>
       <hr />
-      {data ? null : <ItemList list={data} />}
+      {data && <ItemList list={data} />}
     </div>
   );
 }

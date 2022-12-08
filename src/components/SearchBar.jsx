@@ -18,7 +18,7 @@ export default function SearchBar(props) {
   return (
     <>
       <form onSubmit={submitHandler} className="flex justify-center p-5">
-        <div class="flex rounded-md overflow-hidden w-60 h-10">
+        <div className="flex rounded-md overflow-hidden w-60 h-10">
           <input
             onChange={inputHandler}
             type="text"
@@ -26,7 +26,7 @@ export default function SearchBar(props) {
             className="w-full rounded-md rounded-r-none"
           />
           <button
-            class="bg-indigo-600 text-white text-sm font-semibold rounded-r-md p-3"
+            className="bg-indigo-600 text-white text-sm font-semibold rounded-r-md p-3"
             type="submit"
           >
             Search
